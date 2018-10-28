@@ -11,7 +11,7 @@ def main(args):
     # data reading
     with open(infile) as f:
         header = f.readline()
-        header = header.split(';')
+        header = header.strip('\n').split(';')
         status_idx, state_idx, soc_idx = -1, -1, -1
         for i, col in enumerate(header):
             if 'STATUS' in col:
